@@ -6,92 +6,6 @@
 
 
     <script>
-
-        (function () {
-            var lineMaker = new LineMaker({
-                position: 'fixed',
-                lines: [
-                    {
-                        top: 0,
-                        left: '10%',
-                        width: 13,
-                        height: '100vh',
-                        color: '#5ccc93',
-                        hidden: true,
-                        animation: {duration: 1000, easing: 'easeInOutSine', delay: 400, direction: 'TopBottom'}
-                    },
-                    {
-                        top: 0,
-                        left: '30%',
-                        width: 16,
-                        height: '100vh',
-                        color: '#5ccc93',
-                        hidden: true,
-                        animation: {duration: 1000, easing: 'easeInOutQuad', delay: 100, direction: 'TopBottom'}
-                    },
-                    {
-                        top: 0,
-                        left: '50%',
-                        width: 9,
-                        height: '100vh',
-                        color: '#5ccc93',
-                        hidden: true,
-                        animation: {duration: 1000, easing: 'easeInOutQuad', delay: 0, direction: 'TopBottom'}
-                    },
-                    {
-                        top: 0,
-                        left: '70%',
-                        width: 30,
-                        height: '100vh',
-                        color: '#5ccc93',
-                        hidden: true,
-                        animation: {duration: 1000, easing: 'easeOutSine', delay: 400, direction: 'TopBottom'}
-                    },
-                    {
-                        top: 0,
-                        left: '90%',
-                        width: 17,
-                        height: '100vh',
-                        color: '#5ccc93',
-                        hidden: true,
-                        animation: {duration: 1000, easing: 'easeOutSine', delay: 300, direction: 'TopBottom'}
-                    }
-                ]
-            });
-
-            setTimeout(function () {
-                lineMaker.animateLinesIn();
-            }, 250);
-        })();
-
-        function doIt() {
-
-            lineMaker.createLine([settings]);
-
-            debugger;
-            const height = document.getElementById("pic1").offsetHeight;
-            // .offsetWidth = height;
-            document.getElementById("pic1").style.width = height;
-            // debugger;
-            // const classList = document.getElementById("pic1").classList;
-            // if (classList.contains("pic1")) {
-            //     classList.remove("pic1");
-            //     classList.add("pic2");
-            //     return;
-            // }
-            //
-            // if (classList.contains("pic2")) {
-            //     classList.remove("pic2");
-            //     classList.add("pic1");
-            //     return;
-            // }
-
-            // remove("pic1");
-            // document.getElementById("pic1").classList.add("pic2");
-        }
-
-        //
-
     </script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="style2.css">
@@ -99,60 +13,37 @@
 
 
         @keyframes example1 {
-            0% {
-                height: 0%;
-                top: 50%
-            }
-            /*25%  {height: 30%; top: 10%}*/
-            /*50%  {height: 35%; top: 15%}*/
-            75% {
-                height: 30%;
-                top: 20%
-            }
-            100% {
-                height: 50%;
-                top: 0%
-            }
+            0% {height: 0%;top: 50%}
+            75% {height: 30%;top: 20%}
+            100% {height: 50%;top: 0%}
         }
 
         @keyframes example2 {
-            0% {
-                height: 0%;
-            }
-            25% {
-                height: 0%;
-            }
-            50% {
-                height: 0%;
-            }
-            75% {
-                height: 30%;
-            }
-            100% {
-                height: 50%;
-            }
+            0% {height: 0%;}
+            25% {height: 0%;}
+            50% {height: 0%;}
+            75% {height: 30%;}
+            100% {height: 50%;}
         }
 
         @keyframes ship {
-            0% {
-                top: -100rem;
-            }
-            /*25%  {top: -50rem;}*/
-            /*50%  {top: -10rem;}*/
-            /*75%  {top: 5rem;}*/
-            95% {
-                top: 10.5rem;
-            }
-            98% {
-                top: 9.5rem;
-            }
-            100% {
-                top: 10rem;
-            }
+            0% {top: -1000px;}
+            8% {top: 105px;}
+            9% {top: 95px;}
+            10% {top: 100px;}
+            55% {top: 200px; left: 50%}
+            /*60% {top: 200px; left: 50%}*/
+            /*70% {top: 200px; left: 51%}*/
+            /*80% {top: 200px; left: 47%}*/
+            /*85% {top: 200px; left: 42%}*/
+            /*90% {top: 200px; left: 36%}*/
+            /*95% {top: 200px; left: 30%}*/
+            100% {top: 200px; left: -500px}
+
         }
 
         #pic1 {
-            z-index: 101;
+            z-index: 999;
             background-image: url('unnamed.jpg');
             background-size: 10rem;
             border: none !important;
@@ -163,31 +54,28 @@
             top: 30%;
             /*vertical-align: middle;*/
             /*left: 44%;*/
-
         }
 
         .vl {
-            z-index: 100;
+            z-index: 120;
             border-left: 1px solid white;
             height: 50%;
             position: absolute;
             left: 50%;
             margin-left: -3px;
             top: 0;
-
             animation-name: example1;
             animation-duration: 4s;
         }
 
         .v2 {
-            z-index: 100;
+            z-index: 120;
             border-left: 1px solid white;
             height: 50%;
             top: 50%;
             position: absolute;
             left: 50%;
             margin-left: -3px;
-
             animation-name: example2;
             animation-duration: 4s;
         }
@@ -196,7 +84,6 @@
             border: 1px solid;
             border-radius: 10rem;
             height: 10rem !important;
-            /*width: calc(591.44 / 1127.34 * 100%);;*/
             width: 100%;
             display: inline-block;
         }
@@ -208,13 +95,72 @@
             height: 30rem;
             position: relative;
             animation-name: ship;
-            animation-duration: 1s;
+            animation-duration: 10s;
+        }
+
+        .fire {
+            height: 1rem !important;
+            width: 1rem !important;
+            position: static !important;
+        }
+
+        .flames {
+            height: 1rem !important;
+            width: 1rem !important;
+        }
+
+
+
+        @keyframes engine {
+            0% {left: -80px;}
+            98% {left: -80px;}
+            100% {left: 0;}
+        }
+
+        /*@keyframes ship {*/
+            /*0% {left: 0;}*/
+            /*98% {left: -300px;}*/
+            /*100% {left: -500px;}*/
+        /*}*/
+
+        .engine1-box {
+            z-index: 100;
+            display: inline-block;
+            /*border: 1px solid green;*/
+            position: relative;
+            animation-name: engine;
+            animation-duration: 5s;
+            top: -0.25rem;
+
+        }
+
+        .engine1 {
+            z-index: 150;
+            display: inline-block;
+            border: 1px solid white;
+            height: 1rem;
+            width: 1rem;
+            top: 0;
+            /*left: 50%;*/
+            position: relative;
+            border-right: none !important;
+            border-bottom-left-radius: 1rem;
+            border-top-left-radius: 1rem;
+            /*animation-name: engine;*/
+            /*animation-duration: 5s;*/
             /*display: inline-block;*/
+        }
+
+        .engine1-fire {
+            display: inline-block;
+            height: 1rem !important;
+            width: 1rem !important;
             /*border: 1px solid gray;*/
         }
 
+
         .engine1-pocket {
-            /*border: 1px solid white;*/
+            /*border: 1px solid gray;*/
             z-index: 999;
             background-color: #111217;
             height: 1.5rem;
@@ -228,43 +174,29 @@
             /*display: inline-block;*/
         }
 
-        .engine1 {
-            z-index: 100;
-            display: inline-block;
-            border: 1px solid white;
-            height: 1rem;
-            width: 1rem;
-            top:0;
-            /*left: 50%;*/
+
+        .engine1-container {
+            height: 1.5rem;
+            top: -0.5rem;
+            /*border: 1px solid red;*/
             position: relative;
-            border-right: none !important;
-            border-bottom-left-radius: 1rem;
-            border-top-left-radius: 1rem;
-            animation-name: engine;
-            animation-duration: 5s;
-            /*display: inline-block;*/
-        }
-        .engine1-fire {
-            display: inline-block;
-            height: 1rem!important;
-            width: 1rem!important;
-            border: 1px solid gray;
+            z-index: 120
         }
 
-        .fire {
-            height: 1rem!important;
-            width: 1rem!important;
-            position: static!important;
-        }
+        /*==========*/
 
-        .flames {
-            height: 1rem!important;
-            width: 1rem!important;
+        .engine2-container {
+            height: 1.5rem;
+            top: 27.6rem;
+            /*border: 1px solid gray;*/
+            position: relative;
+            z-index: 0;
+
         }
 
         .engine2-pocket {
-            z-index: 999;
-            /*border: 1px solid white;*/
+            z-index: 110;
+            /*border: 1px solid red;*/
             background-color: #111217;
             height: 1.6rem;
 
@@ -273,6 +205,17 @@
             left: 0%;
             position: relative;
             border-right: none !important;
+        }
+
+        .engine2-box {
+            z-index: 50;
+            display: inline-block;
+            /*border: 1px solid green;*/
+            position: relative;
+            animation-name: engine;
+            animation-duration: 5s;
+            top: -0.3rem;
+
         }
 
         .engine2 {
@@ -287,32 +230,16 @@
             border-right: none !important;
             border-bottom-left-radius: 1rem;
             border-top-left-radius: 1rem;
-            animation-name: engine;
-            animation-duration: 5s;
+            /*animation-name: engine;*/
+            /*animation-duration: 5s;*/
             /*display: inline-block;*/
         }
-
-        .engine2-container {
-            height: 1.5rem;
-            top:27.1rem;
-            position: relative;
+        .engine2-fire {
+            display: inline-block;
+            height: 1rem !important;
+            width: 1rem !important;
             /*border: 1px solid gray;*/
         }
-
-        .engine1-section {
-            height: 1.5rem;
-            top: -0.5rem;
-            /*border: 1px solid gray;*/
-            position: relative;
-        }
-
-        @keyframes engine {
-            0% {left: -3rem;}
-            98% {left: -3rem;}
-            100% {left: 0;}
-        }
-
-
 
     </style>
 
@@ -320,9 +247,9 @@
 <body>
 
 <div id="ship" class="pic-container">
-    <div class="engine1-section">
+    <div class="engine1-container">
         <div class="engine1-pocket"></div>
-        <!--<div class="engine1-container">-->
+        <div class="engine1-box">
             <div class="engine1"></div>
             <div class="engine1-fire">
                 <div class="fire">
@@ -333,16 +260,28 @@
                         <div class="flame"></div>
                     </div>
                 </div>
-            </div>git st
+            </div>
         </div>
     </div>
 
-    <div id="pic1" onmouseover="doIt()" class="pic pic1"></div>
+    <div id="pic1" class="pic pic1"></div>
     <div class="vl"></div>
     <div class="v2"></div>
     <div class="engine2-container">
         <div class="engine2-pocket"></div>
-        <div class="engine2"></div>
+        <div class="engine2-box">
+            <div class="engine2"></div>
+            <div class="engine2-fire">
+                <div class="fire">
+                    <div class="flames">
+                        <div class="flame"></div>
+                        <div class="flame"></div>
+                        <div class="flame"></div>
+                        <div class="flame"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
